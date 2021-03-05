@@ -1,0 +1,10 @@
+.header {
+    overflow: auto;
+    display: flex;
+}
+
+.nameWrapper {
+    font-size: 70%;
+    font-weight: bold;
+    flex-grow: 5;
+}

@@ -1,0 +1,111 @@
+.abilityScoresContainer {
+    width: 18vw;
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-flow: row;
+}
+
+.abilityScoresCol {
+    width: 3.5vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 2%;
+    flex-flow: column; 
+}
+
+.abilityScoreName {
+    flex: 0 0 3.5vw;
+    margin: auto;
+}
+
+.blackName {
+    background-color: black;
+    color: white;
+    font-size: 70%;
+}
+
+.hitPointName {
+    margin: auto;
+}
+
+.hitPointCol {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 30%;
+}
+
+.labelTopBoxCol {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 20%;
+}
+
+.abilityHitPointRow {
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    height: 20%;
+}
+
+.blackName:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.abilityScoreBox {
+    width: 40%;
+    min-width: 0;
+}
+
+.hitPointBox {
+    width: 50%;
+    min-width: 0;
+    margin: auto;
+}
+
+.tempNonlethalBox {
+    width: 30%;
+    min-width: 0;
+    margin: auto;
+    flex-basis: 10%;
+}
+
+.initBox {
+    width: 50%;
+    min-width: 0;
+    margin: auto;
+    flex-basis: 2.5vw; 
+}
+
+.drTextBox {
+    width: 80%;
+    margin: auto;
+}
+
+.acName {
+    margin: auto;
+    flex-basis: 3.5vw;
+}
+
+.initName {
+    min-width: 0;
+    flex: 0 0 3.5vw;
+    align-self:flex-end;
+}
+
+.labelText {
+    font-size: 70%;
+    color: gray;
+    text-align: center;
+}
+
+.mainCol {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+}

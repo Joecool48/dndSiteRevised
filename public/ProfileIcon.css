@@ -1,0 +1,7 @@
+.profileIcon {
+    height: 10%;
+    width: 10%;
+    display: inline-block;
+    flex-basis: 10%;
+    flex-grow: 1;
+}
