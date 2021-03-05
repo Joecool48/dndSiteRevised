@@ -97,7 +97,11 @@ var DraggableWindow = function (_React$Component) {
                     { onMouseMove: this.onMouseMove, onMouseDown: this.onMouseDown, onMouseUp: this.onMouseUp, ref: this.windowHeaderRef, className: "windowHeader" },
                     "This is header"
                 ),
-                React.createElement(PathfinderCharacterSheet, null)
+                React.createElement(
+                    "div",
+                    null,
+                    React.createElement(PathfinderCharacterSheet, null)
+                )
             );
         }
     }]);

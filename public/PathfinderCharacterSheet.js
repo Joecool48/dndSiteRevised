@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import PathfinderSkillRow from "./PathfinderSkillRow.js";
+
 var PathfinderCharacterSheet = function (_React$Component) {
     _inherits(PathfinderCharacterSheet, _React$Component);
 
@@ -14,7 +16,106 @@ var PathfinderCharacterSheet = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (PathfinderCharacterSheet.__proto__ || Object.getPrototypeOf(PathfinderCharacterSheet)).call(this, props));
 
-        _this.state = {};
+        _this.state = {
+            skills: {
+                "Acrobatics": {
+                    "name": "Acrobatics"
+                },
+                "Appraise": {
+                    "name": "Appraise"
+                },
+                "Bluff": {
+                    "name": "Bluff"
+                },
+                "Climb": {
+                    "name": "Climb"
+                },
+                "Diplomacy": {
+                    "name": "Diplomacy"
+                },
+                "Disable Device": {
+                    "name": "Disable Device"
+                },
+                "Disguise": {
+                    "name": "Disguise"
+                },
+                "Escape Artist": {
+                    "name": "Escape Artist"
+                },
+                "Fly": {
+                    "name": "Fly"
+                },
+                "Handle Animal": {
+                    "name": "Handle Animal"
+                },
+                "Heal": {
+                    "name": "Heal"
+                },
+                "Intimidate": {
+                    "name": "Intimidate"
+                },
+                "Knowledge (Arcana)": {
+                    "name": "Knowledge (Arcana)"
+                },
+                "Knowledge (Dungeoneering)": {
+                    "name": "Knowledge (Dungeoneering)"
+                },
+                "Knowledge (Engineering)": {
+                    "name": "Knowledge (Engineering)"
+                },
+                "Knowledge (Geography)": {
+                    "name": "Knowledge (Geography)"
+                },
+                "Knowledge (History)": {
+                    "name": "Knowledge (History)"
+                },
+                "Knowledge (Local)": {
+                    "name": "Knowledge (Local)"
+                },
+                "Knowledge (Nature)": {
+                    "name": "Knowledge (Nature)"
+                },
+                "Knowledge (Nobility)": {
+                    "name": "Knowledge (Nobility)"
+                },
+                "Knowledge (Planes)": {
+                    "name": "Knowledge (Planes)"
+                },
+                "Knowledge (Religion)": {
+                    "name": "Knowledge (Religion)"
+                },
+                "Linguistics": {
+                    "name": "Linguistics"
+                },
+                "Perception": {
+                    "name": "Perception"
+                },
+                "Ride": {
+                    "name": "Ride"
+                },
+                "Sense Motive": {
+                    "name": "Sense Motive"
+                },
+                "Sleight Of Hand": {
+                    "name": "Sleight of Hand"
+                },
+                "Spellcraft": {
+                    "name": "Spellcraft"
+                },
+                "Stealth": {
+                    "name": "Stealth"
+                },
+                "Survival": {
+                    "name": "Survival"
+                },
+                "Swim": {
+                    "name": "Swim"
+                },
+                "Use Magic Device": {
+                    "name": "Use Magic Device"
+                }
+            }
+        };
         return _this;
     }
 
@@ -35,64 +136,72 @@ var PathfinderCharacterSheet = function (_React$Component) {
                             { className: "abilityScoresContainer" },
                             React.createElement(
                                 "div",
-                                { className: "abilityScoresCol" },
+                                { className: "abilityScoreRow" },
                                 React.createElement(
                                     "button",
                                     { className: "abilityScoreName blackName" },
                                     "STR"
                                 ),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" })
+                            ),
+                            React.createElement(
+                                "div",
+                                { className: "abilityScoreRow" },
                                 React.createElement(
                                     "button",
                                     { className: "abilityScoreName blackName" },
                                     "DEX"
                                 ),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" })
+                            ),
+                            React.createElement(
+                                "div",
+                                { className: "abilityScoreRow" },
                                 React.createElement(
                                     "button",
                                     { className: "abilityScoreName blackName" },
                                     "CON"
                                 ),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" })
+                            ),
+                            React.createElement(
+                                "div",
+                                { className: "abilityScoreRow" },
                                 React.createElement(
                                     "button",
                                     { className: "abilityScoreName blackName" },
                                     "INT"
                                 ),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" })
+                            ),
+                            React.createElement(
+                                "div",
+                                { className: "abilityScoreRow" },
                                 React.createElement(
                                     "button",
                                     { className: "abilityScoreName blackName" },
                                     "WIS"
                                 ),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" }),
+                                React.createElement("input", { className: "abilityScoreBox" })
+                            ),
+                            React.createElement(
+                                "div",
+                                { className: "abilityScoreRow" },
                                 React.createElement(
                                     "button",
                                     { className: "abilityScoreName blackName" },
                                     "CHA"
-                                )
-                            ),
-                            React.createElement(
-                                "div",
-                                { className: "abilityScoresCol" },
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" })
-                            ),
-                            React.createElement(
-                                "div",
-                                { className: "abilityScoresCol" },
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" })
-                            ),
-                            React.createElement(
-                                "div",
-                                { className: "abilityScoresCol" },
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
-                                React.createElement("input", { className: "abilityScoreBox" }),
+                                ),
                                 React.createElement("input", { className: "abilityScoreBox" }),
                                 React.createElement("input", { className: "abilityScoreBox" }),
                                 React.createElement("input", { className: "abilityScoreBox" })
@@ -108,7 +217,7 @@ var PathfinderCharacterSheet = function (_React$Component) {
                             ),
                             React.createElement(
                                 "div",
-                                { className: "abilityHitPointRow" },
+                                { className: "hitPointRow" },
                                 React.createElement(
                                     "div",
                                     { className: "labelTopBoxCol" },
@@ -142,7 +251,7 @@ var PathfinderCharacterSheet = function (_React$Component) {
                             ),
                             React.createElement(
                                 "div",
-                                { className: "abilityHitPointRow" },
+                                { className: "hitPointRow" },
                                 React.createElement(
                                     "p",
                                     { className: "labelText" },
@@ -158,7 +267,7 @@ var PathfinderCharacterSheet = function (_React$Component) {
                             ),
                             React.createElement(
                                 "div",
-                                { className: "abilityHitPointRow" },
+                                { className: "hitPointRow" },
                                 React.createElement(
                                     "p",
                                     { className: "labelText" },
@@ -168,7 +277,7 @@ var PathfinderCharacterSheet = function (_React$Component) {
                             ),
                             React.createElement(
                                 "div",
-                                { className: "abilityHitPointRow" },
+                                { className: "hitPointRow" },
                                 React.createElement(
                                     "div",
                                     { className: "labelTopBoxCol" },
@@ -187,7 +296,7 @@ var PathfinderCharacterSheet = function (_React$Component) {
                                         { className: "labelText" },
                                         "Total"
                                     ),
-                                    React.createElement("input", { className: "initBox" })
+                                    React.createElement("input", { className: "normalBox" })
                                 ),
                                 React.createElement(
                                     "div",
@@ -197,18 +306,22 @@ var PathfinderCharacterSheet = function (_React$Component) {
                                         { className: "labelText" },
                                         "Temp"
                                     ),
-                                    React.createElement("input", { className: "initBox" })
+                                    React.createElement("input", { className: "normalBox" })
                                 )
                             )
                         )
                     ),
                     React.createElement(
                         "div",
-                        { className: "abilityHitPointRow" },
+                        { className: "mainRow" },
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
-                            React.createElement("p", { className: "labelText" }),
+                            { className: "acCol buttonCol" },
+                            React.createElement(
+                                "p",
+                                { className: "labelText" },
+                                "Hey"
+                            ),
                             React.createElement(
                                 "button",
                                 { className: "blackName acName" },
@@ -217,28 +330,32 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "acCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "acCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
-                            React.createElement("p", { className: "labelText" }),
+                            { className: "acCol buttonCol" },
+                            React.createElement(
+                                "p",
+                                { className: "labelText" },
+                                "Hey"
+                            ),
                             React.createElement(
                                 "button",
                                 { className: "blackName acName" },
@@ -247,14 +364,22 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
-                            React.createElement("p", { className: "labelText" }),
-                            React.createElement("input", { className: "initBox" })
+                            { className: "acCol boxCol" },
+                            React.createElement(
+                                "p",
+                                { className: "labelText" },
+                                "Hey"
+                            ),
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
-                            React.createElement("p", { className: "labelText" }),
+                            { className: "acCol buttonCol" },
+                            React.createElement(
+                                "p",
+                                { className: "labelText" },
+                                "Hey"
+                            ),
                             React.createElement(
                                 "button",
                                 { className: "blackName acName" },
@@ -263,17 +388,21 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
-                            React.createElement("p", { className: "labelText" }),
-                            React.createElement("input", { className: "initBox" })
+                            { className: "acCol boxCol" },
+                            React.createElement(
+                                "p",
+                                { className: "labelText" },
+                                "Hey"
+                            ),
+                            React.createElement("input", { className: "normalBox" })
                         )
                     ),
                     React.createElement(
                         "div",
-                        { className: "abilityHitPointRow" },
+                        { className: "mainRow" },
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "saveCol buttonCol" },
                             React.createElement("p", { className: "labelText" }),
                             React.createElement(
                                 "button",
@@ -283,27 +412,27 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "saveCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "saveCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "saveCol buttonCol" },
                             React.createElement("p", { className: "labelText" }),
                             React.createElement(
                                 "button",
@@ -313,27 +442,27 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "saveCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "saveCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "saveCol buttonCol" },
                             React.createElement("p", { className: "labelText" }),
                             React.createElement(
                                 "button",
@@ -343,31 +472,31 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "saveCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "saveCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         )
                     ),
                     React.createElement(
                         "div",
-                        { className: "abilityHitPointRow" },
+                        { className: "mainRow" },
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "babCmbCol buttonCol" },
                             React.createElement("p", { className: "labelText" }),
                             React.createElement(
                                 "button",
@@ -377,27 +506,27 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "babCmbCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "babCmbCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "babCmbCol buttonCol" },
                             React.createElement("p", { className: "labelText" }),
                             React.createElement(
                                 "button",
@@ -407,31 +536,31 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "babCmbCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "babCmbCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         )
                     ),
                     React.createElement(
                         "div",
-                        { className: "abilityHitPointRow" },
+                        { className: "mainRow" },
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "attackCol buttonCol" },
                             React.createElement("p", { className: "labelText" }),
                             React.createElement(
                                 "button",
@@ -441,27 +570,27 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "attackCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "attackCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "attackCol buttonCol" },
                             React.createElement("p", { className: "labelText" }),
                             React.createElement(
                                 "button",
@@ -471,31 +600,31 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "attackCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "attackCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         )
                     ),
                     React.createElement(
                         "div",
-                        { className: "abilityHitPointRow" },
+                        { className: "mainRow" },
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "cmdSrCol buttonCol" },
                             React.createElement("p", { className: "labelText" }),
                             React.createElement(
                                 "button",
@@ -505,27 +634,27 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "cmdSrCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "cmdSrCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "cmdSrCol buttonCol" },
                             React.createElement("p", { className: "labelText" }),
                             React.createElement(
                                 "button",
@@ -535,27 +664,39 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "cmdSrCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Total"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         ),
                         React.createElement(
                             "div",
-                            { className: "labelTopBoxCol" },
+                            { className: "cmdSrCol boxCol" },
                             React.createElement(
                                 "p",
                                 { className: "labelText" },
                                 "Temp"
                             ),
-                            React.createElement("input", { className: "initBox" })
+                            React.createElement("input", { className: "normalBox" })
                         )
                     )
                 ),
-                React.createElement("div", { className: "mainCol" })
+                React.createElement(
+                    "div",
+                    { className: "mainCol" },
+                    React.createElement(
+                        "p",
+                        { className: "blackName" },
+                        "SKILLS"
+                    ),
+                    Object.values(this.state.skills).map(function (skill, index) {
+                        console.log(skill.name);
+                        return React.createElement(PathfinderSkillRow, { skillName: skill.name });
+                    })
+                )
             );
         }
     }]);

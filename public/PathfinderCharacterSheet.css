@@ -1,27 +1,25 @@
 .abilityScoresContainer {
-    width: 18vw;
+    width: 250px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-flow: column;
+}
+
+.abilityScoreRow {
     display: inline-flex;
     justify-content: space-evenly;
     flex-flow: row;
-}
-
-.abilityScoresCol {
-    width: 3.5vw;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 2%;
-    flex-flow: column; 
+    width: 250px;
 }
 
 .abilityScoreName {
-    flex: 0 0 3.5vw;
-    margin: auto;
+    width: 50px;
 }
 
 .blackName {
     background-color: black;
     color: white;
-    font-size: 70%;
+    font-size: .7em;
 }
 
 .hitPointName {
@@ -33,7 +31,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     margin: auto;
-    width: 30%;
+    width: 250px;
 }
 
 .labelTopBoxCol {
@@ -41,14 +39,75 @@
     flex-direction: column;
     justify-content: space-evenly;
     margin: auto;
-    width: 20%;
+    width: 200px;
+}
+
+
+.acCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+}
+
+.saveCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+
+}
+
+.babCmbCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+
+}
+
+.attackCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+
+}
+
+.cmdSrCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+
+}
+
+.buttonCol {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.boxCol {
+    margin: 0;
+}
+
+.hitPointRow {
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    width: 250px;
+}
+
+.mainRow {
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: center;
 }
 
 .abilityHitPointRow {
     display: inline-flex;
     flex-flow: row;
-    justify-content: space-evenly;
-    height: 20%;
+    justify-content: center;
 }
 
 .blackName:hover {
@@ -57,8 +116,9 @@
 }
 
 .abilityScoreBox {
-    width: 40%;
     min-width: 0;
+    flex: 0 0 40px;
+    min-height: 0;
 }
 
 .hitPointBox {
@@ -74,11 +134,12 @@
     flex-basis: 10%;
 }
 
-.initBox {
-    width: 50%;
+.normalBox {
     min-width: 0;
+    width: 30px;
     margin: auto;
-    flex-basis: 2.5vw; 
+    flex: 0 0 20px; 
+
 }
 
 .drTextBox {
@@ -88,13 +149,11 @@
 
 .acName {
     margin: auto;
-    flex-basis: 3.5vw;
+    flex: 0 0 30px;
 }
 
 .initName {
-    min-width: 0;
-    flex: 0 0 3.5vw;
-    align-self:flex-end;
+    flex: 0 0 30px;
 }
 
 .labelText {
@@ -108,4 +167,26 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 50%;
+}
+
+.skillRow {
+    display: inline-flex;
+    flex-direction: row;
+    width: 500px;
+    margin: auto;
+}
+
+.skillText {
+    font-size: .4em;
+    display: inline-block;
+    min-width: 20em;
+}
+
+.skillTextField {
+    min-width: 0;
+}
+
+.signText {
+    font-size: .7em;
+    display: inline-block;
 }

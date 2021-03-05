@@ -70,7 +70,9 @@ class DraggableWindow extends React.Component {
         return (
             <div ref={this.windowRef} className="window">
                 <div onMouseMove={this.onMouseMove} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} ref={this.windowHeaderRef} className="windowHeader">This is header</div>
-                <PathfinderCharacterSheet/> 
+                <div>
+                    <PathfinderCharacterSheet/> 
+                </div>
             </div>
         )
     }
