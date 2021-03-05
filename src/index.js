@@ -7,6 +7,8 @@ export default function (prefix='id') {
     return `${prefix}${lastId}`
 }
 
+
+
 ReactDOM.render(<App/>,  document.getElementById("main_container"));
 
 

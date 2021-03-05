@@ -107,7 +107,7 @@ class PathfinderCharacterSheet extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="bigRow">
                 <div className="mainCol">
                     <div className="abilityHitPointRow">
                         <div className="abilityScoresContainer">
@@ -347,7 +347,6 @@ class PathfinderCharacterSheet extends React.Component {
                 <div className="mainCol">
                     <p className="blackName">SKILLS</p>
                     {Object.values(this.state.skills).map((skill, index) => {
-                        console.log(skill.name)
                         return <PathfinderSkillRow skillName={skill.name}/>
                     })}
                 </div>

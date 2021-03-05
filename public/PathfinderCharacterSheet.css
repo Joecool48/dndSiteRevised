@@ -3,6 +3,7 @@
     display: inline-flex;
     justify-content: space-evenly;
     flex-flow: column;
+    flex: 0 0 250px;
 }
 
 .abilityScoreRow {
@@ -125,6 +126,13 @@
     width: 50%;
     min-width: 0;
     margin: auto;
+}
+
+.bigRow {
+    display: inline-flex;
+    flex-flow: row;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 .tempNonlethalBox {

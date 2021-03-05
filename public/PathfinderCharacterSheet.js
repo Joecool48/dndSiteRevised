@@ -124,7 +124,7 @@ var PathfinderCharacterSheet = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 "div",
-                null,
+                { className: "bigRow" },
                 React.createElement(
                     "div",
                     { className: "mainCol" },
@@ -693,7 +693,6 @@ var PathfinderCharacterSheet = function (_React$Component) {
                         "SKILLS"
                     ),
                     Object.values(this.state.skills).map(function (skill, index) {
-                        console.log(skill.name);
                         return React.createElement(PathfinderSkillRow, { skillName: skill.name });
                     })
                 )
