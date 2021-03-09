@@ -1,0 +1,89 @@
+.pathfinderWeaponListHeader {
+    background-color: black;
+    display: flex;
+    flex-flow: row;
+    justify-content: end;
+    flex: 0 0 50%;
+}
+
+.pathfinderWeaponListHeaderText {
+    color: white;
+    margin-right: 15px;
+}
+
+.pathfinderWeaponListBody {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+
+}
+
+.pathfinderWeaponList {
+    list-style: none;
+}
+
+.sheetUnderlined {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.pathfinderSheetButton {
+    text-decoration: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.pathfinderSheetButton:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.pathfinderListItemEntry {
+    display: flex;
+    flex-flow: column;
+    flex: 0 0 100%;
+    justify-content: start;
+    margin-left: 10px;
+    gap: 10px;
+}
+
+.pathfinderListItemRow {
+    display: flex;
+    flex-flow: row;
+    flex: 0 0 100%;
+    justify-content: start;
+    gap: 10px;
+}
+
+.addButtonStyle {
+    float: right;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.gearExpandContainer {
+    border: 1px dotted yellow;
+    display: flex;
+    flex-flow: column;
+    flex: 0 0 100%;
+    justify-content: start;
+    gap: 10px;
+}
+
+.pathfinderWeaponLabel {
+    font-size: .7em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pathfinderUnderlineInput {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    min-width: 0px;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+}

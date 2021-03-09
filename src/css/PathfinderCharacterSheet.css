@@ -1,0 +1,200 @@
+.abilityScoresContainer {
+    width: 250px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-flow: column;
+    flex: 0 0 250px;
+}
+
+.abilityScoreRow {
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-flow: row;
+    width: 250px;
+}
+
+.abilityScoreName {
+    width: 50px;
+}
+
+.blackName {
+    background-color: black;
+    color: white;
+    font-size: .7em;
+}
+
+.hitPointName {
+    margin: auto;
+}
+
+.hitPointCol {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 250px;
+}
+
+.labelTopBoxCol {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 200px;
+}
+
+
+.acCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+}
+
+.saveCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+
+}
+
+.babCmbCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+
+}
+
+.attackCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+
+}
+
+.cmdSrCol {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 50px;
+
+}
+
+.buttonCol {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.boxCol {
+    margin: 0;
+}
+
+.hitPointRow {
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    width: 250px;
+}
+
+.mainRow {
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.abilityHitPointRow {
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.blackName:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.abilityScoreBox {
+    min-width: 0;
+    flex: 0 0 40px;
+    min-height: 0;
+}
+
+.hitPointBox {
+    width: 50%;
+    min-width: 0;
+    margin: auto;
+}
+
+.bigRow {
+    display: inline-flex;
+    flex-flow: row;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+.tempNonlethalBox {
+    width: 30%;
+    min-width: 0;
+    margin: auto;
+    flex-basis: 10%;
+}
+
+.normalBox {
+    min-width: 0;
+    width: 30px;
+    margin: auto;
+    flex: 0 0 20px; 
+
+}
+
+.drTextBox {
+    width: 80%;
+    margin: auto;
+}
+
+.acName {
+    margin: auto;
+    flex: 0 0 30px;
+}
+
+.initName {
+    flex: 0 0 30px;
+}
+
+.labelText {
+    font-size: 70%;
+    color: gray;
+    text-align: center;
+}
+
+.mainCol {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+}
+
+.skillRow {
+    display: inline-flex;
+    flex-direction: row;
+    width: 500px;
+    margin: auto;
+}
+
+.skillText {
+    font-size: .4em;
+    display: inline-block;
+    min-width: 20em;
+}
+
+.skillTextField {
+    min-width: 0;
+}
+
+.signText {
+    font-size: .7em;
+    display: inline-block;
+}

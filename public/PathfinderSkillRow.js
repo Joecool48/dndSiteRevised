@@ -14,7 +14,32 @@ var PathfinderSkillRow = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (PathfinderSkillRow.__proto__ || Object.getPrototypeOf(PathfinderSkillRow)).call(this, props));
 
+        _this.onRankChange = function () {
+            var val = _this.rankRef.current.value(_this.props.rankListener)(_this.props.skillName, val);
+        };
+
+        _this.onTotalChange = function () {
+            var val = _this.totalRef.current.value(_this.props.totalListener)(_this.props.skillName, val);
+        };
+
+        _this.onModChange = function () {
+            var val = _this.modRef.current.value(_this.props.modListener)(_this.props.skillName, val);
+        };
+
+        _this.onMiscChange = function () {
+            var val = _this.miscRef.current.value(_this.props.miscListener)(_this.props.skillName, val);
+        };
+
+        _this.onCondChange = function () {
+            var val = _this.condRef.current.value(_this.props.condListener)(_this.props.skillName, val);
+        };
+
         _this.state = {};
+        _this.totalRef = React.createRef();
+        _this.rankRef = React.createRef();
+        _this.modRef = React.createRef();
+        _this.miscRef = React.createRef();
+        _this.condRef = React.createRef();
         return _this;
     }
 
@@ -30,31 +55,31 @@ var PathfinderSkillRow = function (_React$Component) {
                     { className: "skillText" },
                     this.props.skillName
                 ),
-                React.createElement("input", { className: "skillTextField" }),
+                React.createElement("input", { ref: this.totalRef, className: "skillTextField", onChange: this.onTotalChange }),
                 React.createElement(
                     "p",
                     { className: "signText" },
                     "="
                 ),
-                React.createElement("input", { className: "skillTextField" }),
+                React.createElement("input", { ref: this.rankRef, className: "skillTextField", onChange: this.onRankChange }),
                 React.createElement(
                     "p",
                     { className: "signText" },
                     "+"
                 ),
-                React.createElement("input", { className: "skillTextField" }),
+                React.createElement("input", { ref: this.modRef, className: "skillTextField", onChange: this.onModChange }),
                 React.createElement(
                     "p",
                     { className: "signText" },
                     "+"
                 ),
-                React.createElement("input", { className: "skillTextField" }),
+                React.createElement("input", { ref: this.miscRef, className: "skillTextField", onChange: this.onMiscChange }),
                 React.createElement(
                     "p",
                     { className: "signText" },
                     "+"
                 ),
-                React.createElement("input", { className: "skillTextField" })
+                React.createElement("input", { ref: this.condRef, className: "skillTextField", onChange: this.onCondChange })
             );
         }
     }]);

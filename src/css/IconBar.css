@@ -1,0 +1,15 @@
+.iconBarWrapper {
+    display: flex;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.iconBarElement {
+    text-align: center;
+    flex-basis: 20%;
+    font-size: 150%;
+    flex-grow: 1;
+}
+.iconBarElement:hover {
+    background-color: lightgray;
+}

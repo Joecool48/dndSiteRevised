@@ -15,7 +15,10 @@ class DraggableWindow extends React.Component {
             resizeWidth: 0,
             resizeHeight: 0,
             resizeCursorX: 0,
-            resizeCursorY: 0
+            resizeCursorY: 0,
+            // represents the current tab number (1,2,3,etc...)
+            currentTab: 0,
+            tabs: ["default"]
         }
         this.windowRef = React.createRef()
         this.windowHeaderRef = React.createRef()
@@ -67,9 +70,9 @@ class DraggableWindow extends React.Component {
     onMouseDownResize = (e) => {
         let tolerance = 20
         let domId = this.windowRef.current
-        let bottomRightX = domId.offsetLeft + domId.offsetWidth
-        let bottomRightY = domId.offsetTop + domId.offsetHeight
-        console.log(domId.offsetWidth)
+        let boundingRect = domId.getBoundingClientRect()
+        let bottomRightX = boundingRect.right
+        let bottomRightY = boundingRect.bottom
         if (e.clientX <= bottomRightX && e.clientX >= bottomRightX - tolerance
              && e.clientY <= bottomRightY && e.clientY >= bottomRightY - tolerance) {
                 e.preventDefault()
@@ -89,7 +92,6 @@ class DraggableWindow extends React.Component {
     }
     onMouseMoveResize = (e) => {
         if (this.state.resizing) {
-            this.windowRef.current.style.cursor = "ew-resize"
             e.preventDefault()
             let domId = this.windowRef.current
             this.setState((prevState, prevProps) => ({
@@ -105,25 +107,35 @@ class DraggableWindow extends React.Component {
     }
     componentWillUpdate() {
         if (this.state.dragging) {
-            //this.windowHeaderRef.current.style.cursor = "move"
             this.windowRef.current.style.top = (this.windowRef.current.offsetTop - this.state.windowY) + "px"
             this.windowRef.current.style.left = (this.windowRef.current.offsetLeft - this.state.windowX) + "px"
         }
         if (this.state.resizing) {
-            console.log("Changing size")
-            console.log(this.state.resizeWidth)
-            console.log(this.windowRef.current.style.width)
             this.windowRef.current.style.width = this.state.resizeWidth + "px"
             this.windowRef.current.style.height = this.state.resizeHeight + "px"
         }
     }
 
+    onTabsChange = (t) => {
+        this.setState({tabs: t, currentTab: 0})
+    } 
+
+    onTabClicked = (e) => {
+        console.log("Clicked button tab: ", e.currentTarget.value)
+        this.setState({currentTab: e.currentTarget.value})
+    }
+
     render() {
         return (
-            <div ref={this.windowRef} className="window">
-                <div onMouseMove={this.onMouseMove} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} ref={this.windowHeaderRef} className="windowHeader">This is header</div>
-                <div ref={this.windowBodyRef} onMouseDown={this.onMouseDownResize} onMouseUp={this.onMouseUpResize} onMouseMove={this.onMouseMoveResize}>
-                    <PathfinderCharacterSheet/> 
+            <div ref={this.windowRef} onMouseDown={this.onMouseDownResize} className="window">
+                <div onMouseDown={this.onMouseDown} ref={this.windowHeaderRef} className="windowHeader">This is header</div>
+                <div className="tabList">
+                    {this.state.tabs.map((name, index) => {
+                        return <button onClick={this.onTabClicked} value={name} className="tab">{name}</button>
+                    })}
+                </div>
+                <div ref={this.windowBodyRef}>
+                    <PathfinderCharacterSheet setTabs={this.onTabsChange}  currentTab={this.state.currentTab}/> 
                 </div>
             </div>
         )

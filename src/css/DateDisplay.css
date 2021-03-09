@@ -1,0 +1,5 @@
+.dateText {
+    color: grey;
+    flex-grow: 1;
+    font-size: 65%;
+}

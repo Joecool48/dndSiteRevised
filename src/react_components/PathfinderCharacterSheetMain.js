@@ -1,6 +1,7 @@
 import PathfinderSkillRow from "./PathfinderSkillRow.js"
+import PathfinderWeaponItemList from "./PathfinderWeaponItemList.js"
 
-class PathfinderCharacterSheet extends React.Component {
+class PathfinderCharacterSheetMain extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -103,6 +104,36 @@ class PathfinderCharacterSheet extends React.Component {
                 }
             }
         }
+        let keys = Object.keys(this.state.skills)
+        let i = 0
+        while (i < keys.length) {
+            this.state.skills[keys[i]]["totalListener"] = (name, val) => {
+                //update(this.state, {"skills": {name: {"state": {"total": val}}}})
+            }
+            this.state.skills[keys[i]]["rankListener"] = (name, val) => {
+                //update(this.state, {"skills": {name: {"state": {"rank": val}}}})
+            }
+            this.state.skills[keys[i]]["modListener"] = (name, val) => {
+                //update(this.state, {"skills": {name: {"state": {"mod": val}}}})
+            }
+            this.state.skills[keys[i]]["miscListener"] = (name, val) => {
+                //update(this.state, {"skills": {name: {"state": {"misc": val}}}})
+            }
+            this.state.skills[keys[i]]["condListener"] = (name, val) => {
+                //update(this.state, {"skills": {name: {"state": {"cond": val}}}})
+            }
+            this.state.skills[keys[i]]["skillRef"] = React.createRef()
+            this.state.skills[keys[i]]["state"] = {
+                total: 0,
+                rank: 0,
+                mod: 0,
+                misc: 0,
+                cond: 0
+            }
+
+            i += 1
+        }
+
     }
 
     render() {
@@ -343,9 +374,18 @@ class PathfinderCharacterSheet extends React.Component {
 
                     
                     </div>
+                    <PathfinderWeaponItemList/>
                 </div>
                 <div className="mainCol">
                     <p className="blackName">SKILLS</p>
+                    <div className="mainRow">
+                        <p className="labelText">C</p>
+                        <p className="labelText">Total</p>
+                        <p className="labelText">Ranks</p>
+                        <p className="labelText">Mod</p>
+                        <p className="labelText">Misc</p>
+                        <p className="labelText">Cond</p>
+                    </div>
                     {Object.values(this.state.skills).map((skill, index) => {
                         return <PathfinderSkillRow skillName={skill.name}/>
                     })}
@@ -356,4 +396,4 @@ class PathfinderCharacterSheet extends React.Component {
     }
 }
 
-export default PathfinderCharacterSheet
+export default PathfinderCharacterSheetMain

@@ -1,0 +1,7 @@
+.typeBoxWrapper {
+    display: flex;
+}
+
+.typeBox {
+    flex-grow: 1;
+}

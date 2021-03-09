@@ -1,0 +1,6 @@
+chrome/*
+node_modules/*
+package.json
+package-lock.json
+public/*
+src2/*

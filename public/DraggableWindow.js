@@ -71,9 +71,9 @@ var DraggableWindow = function (_React$Component) {
         _this.onMouseDownResize = function (e) {
             var tolerance = 20;
             var domId = _this.windowRef.current;
-            var bottomRightX = domId.offsetLeft + domId.offsetWidth;
-            var bottomRightY = domId.offsetTop + domId.offsetHeight;
-            console.log(domId.offsetWidth);
+            var boundingRect = domId.getBoundingClientRect();
+            var bottomRightX = boundingRect.right;
+            var bottomRightY = boundingRect.bottom;
             if (e.clientX <= bottomRightX && e.clientX >= bottomRightX - tolerance && e.clientY <= bottomRightY && e.clientY >= bottomRightY - tolerance) {
                 e.preventDefault();
                 _this.windowRef.current.style.cursor = "ew-resize";
@@ -91,7 +91,6 @@ var DraggableWindow = function (_React$Component) {
 
         _this.onMouseMoveResize = function (e) {
             if (_this.state.resizing) {
-                _this.windowRef.current.style.cursor = "ew-resize";
                 e.preventDefault();
                 var domId = _this.windowRef.current;
                 _this.setState(function (prevState, prevProps) {
@@ -105,6 +104,15 @@ var DraggableWindow = function (_React$Component) {
             }
         };
 
+        _this.onTabsChange = function (t) {
+            _this.setState({ tabs: t, currentTab: 0 });
+        };
+
+        _this.onTabClicked = function (e) {
+            console.log("Clicked button tab: ", e.currentTarget.value);
+            _this.setState({ currentTab: e.currentTarget.value });
+        };
+
         _this.state = {
             dragging: false,
             cursorX: 0,
@@ -115,7 +123,10 @@ var DraggableWindow = function (_React$Component) {
             resizeWidth: 0,
             resizeHeight: 0,
             resizeCursorX: 0,
-            resizeCursorY: 0
+            resizeCursorY: 0,
+            // represents the current tab number (1,2,3,etc...)
+            currentTab: 0,
+            tabs: ["default"]
         };
         _this.windowRef = React.createRef();
         _this.windowHeaderRef = React.createRef();
@@ -132,14 +143,10 @@ var DraggableWindow = function (_React$Component) {
         key: "componentWillUpdate",
         value: function componentWillUpdate() {
             if (this.state.dragging) {
-                //this.windowHeaderRef.current.style.cursor = "move"
                 this.windowRef.current.style.top = this.windowRef.current.offsetTop - this.state.windowY + "px";
                 this.windowRef.current.style.left = this.windowRef.current.offsetLeft - this.state.windowX + "px";
             }
             if (this.state.resizing) {
-                console.log("Changing size");
-                console.log(this.state.resizeWidth);
-                console.log(this.windowRef.current.style.width);
                 this.windowRef.current.style.width = this.state.resizeWidth + "px";
                 this.windowRef.current.style.height = this.state.resizeHeight + "px";
             }
@@ -147,18 +154,31 @@ var DraggableWindow = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
+            var _this2 = this;
+
             return React.createElement(
                 "div",
-                { ref: this.windowRef, className: "window" },
+                { ref: this.windowRef, onMouseDown: this.onMouseDownResize, className: "window" },
                 React.createElement(
                     "div",
-                    { onMouseMove: this.onMouseMove, onMouseDown: this.onMouseDown, onMouseUp: this.onMouseUp, ref: this.windowHeaderRef, className: "windowHeader" },
+                    { onMouseDown: this.onMouseDown, ref: this.windowHeaderRef, className: "windowHeader" },
                     "This is header"
                 ),
                 React.createElement(
                     "div",
-                    { ref: this.windowBodyRef, onMouseDown: this.onMouseDownResize, onMouseUp: this.onMouseUpResize, onMouseMove: this.onMouseMoveResize },
-                    React.createElement(PathfinderCharacterSheet, null)
+                    { className: "tabList" },
+                    this.state.tabs.map(function (name, index) {
+                        return React.createElement(
+                            "button",
+                            { onClick: _this2.onTabClicked, value: name, className: "tab" },
+                            name
+                        );
+                    })
+                ),
+                React.createElement(
+                    "div",
+                    { ref: this.windowBodyRef },
+                    React.createElement(PathfinderCharacterSheet, { setTabs: this.onTabsChange, currentTab: this.state.currentTab })
                 )
             );
         }
