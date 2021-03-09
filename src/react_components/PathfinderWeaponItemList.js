@@ -1,20 +1,36 @@
 import PathfinderWeaponItemListEntry from "./PathfinderWeaponItemListEntry.js"
+import newId from "./index.js"
 
 class PathfinderWeaponItemList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            weapons: []
+            weapons: {}
         }
     }
 
     addButtonListener = (e) => {
+        let id = newId() + ""
         this.setState((prevState, prevProps) => ({
             ...prevState,
-            weapons: [
+            weapons: {
                 ...prevState.weapons,
-                {}
-            ]
+                id: {"name": "Weapon"}
+            }
+        }))
+    }
+
+    onNameChange = (id, e) => {
+        console.log("Onname changed reached")
+        this.setState((prevState, prevProps) => ({
+            ...prevState,
+            weapons: {
+                ...prevState.weapons,
+                id: {
+                    ...prevState.weapons.id,
+                    "name": e.target.value
+                }
+            }
         }))
     }
 
@@ -25,10 +41,10 @@ class PathfinderWeaponItemList extends React.Component {
                     <p className="pathfinderWeaponListHeaderText">Weapons</p>
                 </div>
                     <ol className="pathfinderWeaponList">
-                        {(this.state.weapons).map((weapon, index) => {
+                        {Object.keys((this.state.weapons)).map((weapon, index) => {
                             return (
                             <li>
-                                <PathfinderWeaponItemListEntry/>
+                                <PathfinderWeaponItemListEntry id={weapon.id} onNameChange={this.onNameChange} name={this.state.weapons[weapon].name}/>
                             </li>
                             )
                         })}
