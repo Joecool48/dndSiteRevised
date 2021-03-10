@@ -15,9 +15,12 @@ class PathfinderWeaponItemListEntry extends React.Component {
     }
 
     render() {
-        let gearJsx = (<span></span>)
+        let gearJsx = <span></span>
         if (this.state.gearExpand)
-            gearJsx = <PathfinderWeaponGearMenu onNameChange={this.props.onNameChange} name={this.props.name} id={this.props.id}/>
+            gearJsx = <PathfinderWeaponGearMenu onNameChange={this.props.onNameChange} onCategoryChange={this.props.onCategoryChange} onTypeChange={this.props.onTypeChange} 
+                category={this.props.category} name={this.props.name} id={this.props.id} type={this.props.type}
+                onAttackTypeChange={this.props.onAttackTypeChange} attackType={this.props.attackType}
+                onDamageRollAdd={this.props.onDamageRollAdd} damageRolls={this.props.damageRolls}/>
         
         return (
             <div className="pathfinderListItemEntry">

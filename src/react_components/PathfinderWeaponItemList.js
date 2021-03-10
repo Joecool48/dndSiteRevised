@@ -15,20 +15,69 @@ class PathfinderWeaponItemList extends React.Component {
             ...prevState,
             weapons: {
                 ...prevState.weapons,
-                id: {"name": "Weapon"}
+                [id]: {
+                    "name": "Weapon",
+                    "category": "",
+                    "type": "",
+                    "attackType": "Full_BAB",
+                    "damageRolls": {}
+                }
             }
         }))
     }
 
-    onNameChange = (id, e) => {
-        console.log("Onname changed reached")
+    setWeaponProperty = (id, name, value) => {
         this.setState((prevState, prevProps) => ({
             ...prevState,
             weapons: {
                 ...prevState.weapons,
-                id: {
-                    ...prevState.weapons.id,
-                    "name": e.target.value
+                [id]: {
+                    ...prevState.weapons[[id]],
+                    [name]: value
+                }
+            }
+        }))
+
+    }
+
+    onNameChange = (id, e) => {
+        this.setWeaponProperty(id, "name", e.target.value)
+    }
+    
+    onCategoryChange = (id, e) => {
+        this.setWeaponProperty(id, "category", e.target.value)
+    }
+
+    onTypeChange = (id, e) => {
+        this.setWeaponProperty(id, "type", e.target.value)
+    }
+    
+    onAttackTypeChange = (id, e) => {
+        this.setWeaponProperty(id, "attackType", e.target.value)
+    }
+    onDamageRollAdd = (weaponId, e) => {
+        console.log("onDamageRollAdd")
+        let damageId = newId()
+        this.setState((prevState, prevProps) => ({
+            ...prevState,
+            weapons: {
+                ...prevState.weapons,
+                [weaponId]: {
+                    ...prevState.weapons[[weaponId]],
+                    "damageRolls": {
+                        ...prevState.weapons[[weaponId]].damageRolls,
+                        [damageId]: {
+                            "id": damageId,
+                            "name": "",
+                            "damageDice": "",
+                            "modifier": "STR",
+                            "misc": "",
+                            "temp": "",
+                            "type": "",
+                            "canCrit": "Yes",
+                            "critMultiplier": "2"
+                        }
+                    }
                 }
             }
         }))
@@ -44,7 +93,10 @@ class PathfinderWeaponItemList extends React.Component {
                         {Object.keys((this.state.weapons)).map((weapon, index) => {
                             return (
                             <li>
-                                <PathfinderWeaponItemListEntry id={weapon.id} onNameChange={this.onNameChange} name={this.state.weapons[weapon].name}/>
+                                <PathfinderWeaponItemListEntry id={[weapon]} onNameChange={this.onNameChange} onCategoryChange={this.onCategoryChange} onTypeChange={this.onTypeChange} 
+                                    category={this.state.weapons[[weapon]].category} name={this.state.weapons[[weapon]].name} type={this.state.weapons[[weapon]].type}
+                                    onAttackTypeChange={this.onAttackTypeChange} attackType={this.state.weapons[[weapon]].attackType}
+                                    onDamageRollAdd={this.onDamageRollAdd} damageRolls={this.state.weapons[[weapon]].damageRolls}/>
                             </li>
                             )
                         })}

@@ -11,7 +11,24 @@ class PathfinderWeaponGearMenu extends React.Component {
         (this.props.onNameChange)(this.props.id, e)
     }
 
+    onCategoryChange = (e) => {
+        (this.props.onCategoryChange)(this.props.id, e)
+    }
+
+    onTypeChange = (e) => {
+        (this.props.onTypeChange)(this.props.id, e)
+    }
+
+    onAttackTypeChange = (e) => {
+        (this.props.onAttackTypeChange)(this.props.id, e)
+    }
+    
+    onDamageRollAdd = (e) => {
+        (this.props.onDamageRollAdd)(this.props.id, e)
+    }
+
     render() {
+        console.log(this.props.attackType)
         return (
             <div className="gearExpandContainer">
                 <div className="pathfinderListItemRow">
@@ -20,21 +37,23 @@ class PathfinderWeaponGearMenu extends React.Component {
                 </div>
                 <div className="pathfinderListItemRow">
                     <p className="pathfinderWeaponLabel">Category:</p>
-                    <input className="pathfinderUnderlineInput"></input>
+                    <input className="pathfinderUnderlineInput" onChange={this.onCategoryChange} value={this.props.category}></input>
                     <p className="pathfinderWeaponLabel">Type:</p>
-                    <input className="pathfinderUnderlineInput"></input>
+                    <input className="pathfinderUnderlineInput" onChange={this.onTypeChange} value={this.props.type}></input>
                     <p className="pathfinderWeaponLabel">Attack Type:</p>
-                    <select>
-                        <option value="Full BAB">Full BAB</option>
-                        <option value="Natural Attacks">Natural Attacks</option>
-                        <option value="Flurry of Blows">Flurry of Blows</option>
+                    <select onChange={this.onAttackTypeChange} value={this.props.attackType}>
+                        <option value="Full_BAB">Full BAB</option>
+                        <option value="Natural_Attacks">Natural Attacks</option>
+                        <option value="Flurry_of_Blows">Flurry of Blows</option>
                         <option value="Custom">Custom</option>
                     </select>
 
                 </div>
+                {Object.keys(this.props.damageRolls).map((damageRoll, index) => {
+                    return <PathfinderWeaponDamageItem name={this.props.damageRolls[[damageRoll]].name}/>
+                })}
                 <PathfinderWeaponAttackItem/>                
-                <PathfinderWeaponDamageItem/>
-                <button className="addButtonStyle" style={{"width": "25%"}}>Add Damage</button>
+                <button onClick={this.onDamageRollAdd} className="addButtonStyle" style={{"width": "25%"}}>Add Damage</button>
             </div>
         )
     }
