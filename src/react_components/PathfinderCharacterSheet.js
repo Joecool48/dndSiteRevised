@@ -1,11 +1,11 @@
 import PathfinderCharacterSheetMain from "./PathfinderCharacterSheetMain.js"
-//import update from "immutability-helper"
+import PathfinderCharacterSheetGear from "./PathfinderCharacterSheetGear.js"
 
 class PathfinderCharacterSheet extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            tabs: ["Main", "tab2", "tab3"]
+            tabs: ["Main", "Gear", "tab3"]
         }
     }
 
@@ -14,10 +14,14 @@ class PathfinderCharacterSheet extends React.Component {
     }
 
     render() {
-        if (this.state.tabs[this.props.currentTab] === "Main")
-        return (
-            <PathfinderCharacterSheetMain/>
-        )
+        if (this.props.currentTab === "Main")
+            return (
+                <PathfinderCharacterSheetMain/>
+            )
+        else if (this.props.currentTab === "Gear")
+            return (
+                <PathfinderCharacterSheetGear/>
+            )
         else {
             return <div></div>
         }

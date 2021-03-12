@@ -105,7 +105,7 @@ var DraggableWindow = function (_React$Component) {
         };
 
         _this.onTabsChange = function (t) {
-            _this.setState({ tabs: t, currentTab: 0 });
+            _this.setState({ tabs: t, currentTab: t[0] });
         };
 
         _this.onTabClicked = function (e) {

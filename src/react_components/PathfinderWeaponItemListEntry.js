@@ -20,7 +20,8 @@ class PathfinderWeaponItemListEntry extends React.Component {
             gearJsx = <PathfinderWeaponGearMenu onNameChange={this.props.onNameChange} onCategoryChange={this.props.onCategoryChange} onTypeChange={this.props.onTypeChange} 
                 category={this.props.category} name={this.props.name} id={this.props.id} type={this.props.type}
                 onAttackTypeChange={this.props.onAttackTypeChange} attackType={this.props.attackType}
-                onDamageRollAdd={this.props.onDamageRollAdd} damageRolls={this.props.damageRolls}/>
+                onDamageRollAdd={this.props.onDamageRollAdd} damageRolls={this.props.damageRolls}
+                generatedAttacks={this.props.generatedAttacks}/>
         
         return (
             <div className="pathfinderListItemEntry">
@@ -30,7 +31,6 @@ class PathfinderWeaponItemListEntry extends React.Component {
                          <span>{this.props.name}</span>
                      </button>
                 </div>
-
                 {gearJsx}
             </div>
         )

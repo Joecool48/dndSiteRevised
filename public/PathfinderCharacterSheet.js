@@ -7,7 +7,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import PathfinderCharacterSheetMain from "./PathfinderCharacterSheetMain.js";
-//import update from "immutability-helper"
+import PathfinderCharacterSheetGear from "./PathfinderCharacterSheetGear.js";
 
 var PathfinderCharacterSheet = function (_React$Component) {
     _inherits(PathfinderCharacterSheet, _React$Component);
@@ -18,7 +18,7 @@ var PathfinderCharacterSheet = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (PathfinderCharacterSheet.__proto__ || Object.getPrototypeOf(PathfinderCharacterSheet)).call(this, props));
 
         _this.state = {
-            tabs: ["Main", "tab2", "tab3"]
+            tabs: ["Main", "Gear", "tab3"]
         };
         return _this;
     }
@@ -31,7 +31,7 @@ var PathfinderCharacterSheet = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
-            if (this.state.tabs[this.props.currentTab] === "Main") return React.createElement(PathfinderCharacterSheetMain, null);else {
+            if (this.props.currentTab === "Main") return React.createElement(PathfinderCharacterSheetMain, null);else if (this.props.currentTab === "Gear") return React.createElement(PathfinderCharacterSheetGear, null);else {
                 return React.createElement("div", null);
             }
         }

@@ -117,7 +117,7 @@ class DraggableWindow extends React.Component {
     }
 
     onTabsChange = (t) => {
-        this.setState({tabs: t, currentTab: 0})
+        this.setState({tabs: t, currentTab: t[0]})
     } 
 
     onTabClicked = (e) => {

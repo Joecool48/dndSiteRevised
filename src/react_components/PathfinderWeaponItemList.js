@@ -20,6 +20,9 @@ class PathfinderWeaponItemList extends React.Component {
                     "category": "",
                     "type": "",
                     "attackType": "Full_BAB",
+                    "generatedAttacks": {
+                        "Full BAB": {}
+                    },
                     "damageRolls": {}
                 }
             }
@@ -96,7 +99,8 @@ class PathfinderWeaponItemList extends React.Component {
                                 <PathfinderWeaponItemListEntry id={[weapon]} onNameChange={this.onNameChange} onCategoryChange={this.onCategoryChange} onTypeChange={this.onTypeChange} 
                                     category={this.state.weapons[[weapon]].category} name={this.state.weapons[[weapon]].name} type={this.state.weapons[[weapon]].type}
                                     onAttackTypeChange={this.onAttackTypeChange} attackType={this.state.weapons[[weapon]].attackType}
-                                    onDamageRollAdd={this.onDamageRollAdd} damageRolls={this.state.weapons[[weapon]].damageRolls}/>
+                                    onDamageRollAdd={this.onDamageRollAdd} damageRolls={this.state.weapons[[weapon]].damageRolls}
+                                    generatedAttacks={this.state.weapons[[weapon]].generatedAttacks}/>
                             </li>
                             )
                         })}
